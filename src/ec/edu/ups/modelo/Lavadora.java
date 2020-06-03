@@ -30,16 +30,20 @@ public class Lavadora extends Electrodomestico{
     
     @Override
     public double obtenerPrecioFinal(){
-        double precioF=super.obtenerPrecioFinal();
-        if(super.getPeso()>30){
-            precioF=precioF+50;
+        double preF = super.obtenerPrecioFinal();
+        double preB = super.getPrecioBase();
+        double preF2 = preF + preB;
+
+        if (this.carga > 30) {
+            preF2= preF2+50;
         }
-        return precioF;
+        
+        return preF2;
     }
 
     @Override
     public String toString() {
-        return "\n" + super.toString() + "\nLavadora: \n" + "carga: " + carga + "\nPrecio Final: "
+        return   super.toString() + "Lavadora: " + "carga: " + carga + "Precio Final: "
                 + this.obtenerPrecioFinal();
     }        
     

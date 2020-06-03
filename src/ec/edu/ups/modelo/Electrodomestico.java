@@ -109,8 +109,7 @@ public class Electrodomestico implements Comparable<Electrodomestico>{
         }
         if(this.peso>=80){
             precioF=precioF+100;
-        }   
-        precioF=precioF+this.precioBase;
+        }           
         return precioF;
     }
 

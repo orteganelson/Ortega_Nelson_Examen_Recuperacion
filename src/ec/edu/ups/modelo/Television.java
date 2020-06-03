@@ -39,21 +39,26 @@ public class Television extends Electrodomestico{
 
     @Override
     public double obtenerPrecioFinal(){
-        double precioF=super.obtenerPrecioFinal();
+        double preF= super.obtenerPrecioFinal();
+        double preB = super.getPrecioBase();
+
+        preF=preF+preB;
         
         if(this.resolucion>40){
-            precioF=(precioF*0.3)+precioF;
+            preF =preF +(preF*0.3);
         }
-        if(this.puertoHDMI==true){
-            precioF=precioF+50;
+        
+        if (this.puertoHDMI == true){
+            preF=preF+50;
         }
-        return precioF;
+        
+        return preF;
     }
 
     @Override
     public String toString() {
-        return "\n" + super.toString() + "\nTelevision:\n" + "resolucion: "
-                + resolucion + ", puertoHDMI: " + puertoHDMI + "\nPrecio Final: "
+        return   super.toString() + "Television:" + "resolucion: "
+                + resolucion + ", puertoHDMI: " + puertoHDMI + "Precio Final: "
                 + this.obtenerPrecioFinal();
     }
     
